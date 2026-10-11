@@ -103,7 +103,7 @@ def main():
     print(("Would install: " if args.dry_run else "Installed: ") + str(destination))
     if backup:
         print("Previous workflow preserved: " + str(backup))
-    print("In Alfred: topgradecheck (safe), then topgrade (updates).")
+    print("In Alfred: topgrade (updates).")
 
 
 if __name__ == "__main__":

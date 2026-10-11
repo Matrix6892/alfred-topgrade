@@ -17,7 +17,8 @@ Keep instructions aligned in this order: English (`README.md`), Russian
 (`docs/README.ru.md`), Simplified Chinese (`docs/README.zh-CN.md`). Update behavior,
 requirements and limitations in all three when they change.
 
-Run runtime checks using `topgradecheck` or a fake updater. Actual updates must be an
+Run runtime checks using the internal `workflow/run.sh --check` mode or a fake updater.
+Keep Alfred's single keyword `topgrade` for updates. Actual updates must be an
 intentional user action. Work with isolated `TOPGRADE_STATE_DIR` when testing a second
 session, and preserve live user workflows and terminal sessions.
 

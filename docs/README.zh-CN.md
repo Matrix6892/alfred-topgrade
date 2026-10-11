@@ -10,7 +10,6 @@
 - 更新完成后，下次请求在同一会话中运行。
 - 关闭会话后，下次请求会创建新的会话。
 - 重用会话不会改变焦点。新建 Ghostty 标签页时可能短暂切换焦点，随后恢复原标签页和窗格。
-- `topgradecheck` 只检查版本，不更新软件。
 
 ## 在新 Mac 上安装
 
@@ -30,8 +29,7 @@ brew install --cask ghostty
 
 1. 下载 [Topgrade.alfredworkflow](https://github.com/Matrix6892/alfred-topgrade/releases/latest/download/Topgrade.alfredworkflow)。
 2. 打开文件并导入 Alfred。
-3. 在 Alfred 中运行 `topgradecheck`。首次运行时，在 macOS 提示中允许 Alfred 控制所选终端。
-4. 需要更新软件时，运行 `topgrade`。
+3. 需要更新软件时，在 Alfred 中运行 `topgrade`。首次运行时，在 macOS 提示中允许 Alfred 控制所选终端。
 
 没有 Ghostty 时会自动选择 Terminal.app，无须额外配置。
 更新确认和 sudo 密码提示由你的 Topgrade 设置决定。
@@ -99,6 +97,9 @@ Terminal.app 的原生脚本接口创建的是**窗口**，因此备用方案重
 python3 -m unittest discover -s tests -v
 python3 scripts/build.py
 ```
+
+内部模式 `workflow/run.sh --check` 只检查版本，不更新软件。
+它仅供开发使用，在 Alfred 中没有单独的关键词。
 
 构建生成内容可重复的 `dist/Topgrade.alfredworkflow`。
 测试覆盖重复请求、会话重用、错误、关闭后的恢复、空闲启动、终端回退、Topgrade 查找、

@@ -13,7 +13,6 @@ if Ghostty is missing or too old, the workflow uses macOS Terminal.app.
 - Closing the session allows the next request to create a new one.
 - Reusing a session does not change focus. New Ghostty tabs briefly take focus before
   the previous tab and pane are restored.
-- `topgradecheck` checks the version without updating software.
 
 ## Install on a new Mac
 
@@ -32,9 +31,8 @@ brew install --cask ghostty
 
 1. Download [Topgrade.alfredworkflow](https://github.com/Matrix6892/alfred-topgrade/releases/latest/download/Topgrade.alfredworkflow).
 2. Open the downloaded file and import it into Alfred.
-3. Run `topgradecheck` in Alfred. On the first run, allow Alfred to control the
-   selected terminal app when macOS asks.
-4. Run `topgrade` when you want to update software.
+3. Run `topgrade` in Alfred when you want to update software. On the first run,
+   allow Alfred to control the selected terminal app when macOS asks.
 
 If Ghostty is not installed, nothing else needs configuring: Terminal.app is used.
 Updates follow your existing Topgrade settings and may ask for a sudo password.
@@ -107,6 +105,9 @@ No pip packages are required:
 python3 -m unittest discover -s tests -v
 python3 scripts/build.py
 ```
+
+The internal `workflow/run.sh --check` mode checks the version without updating
+software. It is available for development only, with no Alfred keyword.
 
 The build produces `dist/Topgrade.alfredworkflow` with reproducible archive contents.
 Tests cover duplicates, reuse, failures, cleanup, idle restoration, fallback,

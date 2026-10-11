@@ -2,7 +2,6 @@
 
 `topgrade` in Alfred runs updates in one dedicated terminal session.
 Busy repeats are ignored; idle repeats reuse that session.
-`topgradecheck` checks the version without updating software.
 
 Ghostty 1.3.1+ is preferred. Without it, Terminal.app uses one dedicated window.
 New Ghostty tabs briefly take focus before the original tab/pane is restored.
